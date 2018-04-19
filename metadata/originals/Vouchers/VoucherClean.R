@@ -5,6 +5,7 @@ library(lubridate)
 vouch = read_xlsx("DNSpecimenDetailsApr2018.xlsx")
 
 vouch.tidy = vouch %>%
+  mutate_if(is.character, function (s) {trimws(gsub("\n", " ", s))}) %>% 
   mutate(Date = as.Date(as.numeric(Date), origin="1899-12-30")) %>% 
   mutate_at(vars(LatitudeD:LongitudeS), function(x) {
     x=as.numeric(x)
@@ -17,5 +18,5 @@ vouch.tidy = vouch %>%
   ) %>% 
   select(-ends_with("D"), -ends_with("M"), -ends_with("S"))
 
-write_csv(vouch.tidy, "DNVoucherRecordsCleaned.csv.xz")
-
+write.csv(vouch.tidy, xzfile("../DNVoucherRecordsCleaned.csv.xz", "w"),
+          quote =T, row.names = F)
