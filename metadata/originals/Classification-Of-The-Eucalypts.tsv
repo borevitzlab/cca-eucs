@@ -1,10 +1,3 @@
-Genus (common name, if any)
-  Subgenus (common name, if any)
-     Section (common name, if any)
-       Series (common name, if any)
-         Subseries (common name, if any)
-           Species (common name, if any)
-              Subspecies (common name, if any)
 Angophora (apples)                                                                             E. subg. Angophora
      ser. ‘Costatitae’ ms (smooth-barked apples)                                               A. subser. Costatitae, E. ser. Costatitae
           Angophora costata
@@ -522,8 +515,7 @@ Eucalyptus (continued)
           Eucalyptus longissima (greenstone mallee)        	WA	O	C	G(4)m	E. sp. M in Brooker & Kleinig 1990
           Eucalyptus eremicola
             subsp. eremicola (Nawa mallee)                 	WA,SA	O	C	G(2)m
-            subsp. peeneri (peeneri mallee)                	WA,SA	O	C	G(2)m	E. sublucida, E. oleosa var. peeneri, E. peeneri, E. sp. O in Brooker & Kleinig 1990,
-          <>                                                                                  E. sp. PP in Brooker & Kleinig 1994
+            subsp. peeneri (peeneri mallee)                	WA,SA	O	C	G(2)m	E. sublucida, E. oleosa var. peeneri, E. peeneri, E. sp. O in Brooker & Kleinig 1990, E. sp. PP in Brooker & Kleinig 1994
           Eucalyptus ultima (Exmouth mallee)               	WA	O	C	G(2)m	E. sp. OO in Brooker & Kleinig 1994
           Eucalyptus kochii
             subsp. yellowdinensis (Yellowdine mallee)      	WA	O	C	G(2)m
@@ -583,8 +575,7 @@ Eucalyptus (continued)
                                                                                                       E. drummondii subsp. York (Nicolle 3684 & French)
           Eucalyptus glomerosa (jinjulu)                              	SA,WA	O	C	G(2)m
           Eucalyptus oxymitra (sharp-capped mallee)                   	SA,NT,WA	O	C	G(2)m
-          Eucalyptus sp. Little Sandy Desert (Nicolle 4304 & French)  	WA	O	C	G(3)m	E. oldfieldii subsp. ‘paupera’ ms, E. oldfieldii subsp. ‘millarensis’ ms,
-          <>                                                                                          E. oldfieldii subsp. Millar Range (French 303)
+          Eucalyptus sp. Little Sandy Desert (Nicolle 4304 & French)  	WA	O	C	G(3)m	E. oldfieldii subsp. ‘paupera’ ms, E. oldfieldii subsp. ‘millarensis’ ms, E. oldfieldii subsp. Millar Range (French 303)
           Eucalyptus oldfieldii (Oldfield’s mallee)                   	WA	O	C	G(2)m	E. oldfieldii subsp. ‘decora’ ms
           Eucalyptus burracoppinensis (Burracoppin mallee)            	WA	O	C	G(1)m
           Eucalyptus rameliana (Giles’ mallee)                        	WA	O	C	G(3)m
@@ -1226,8 +1217,7 @@ Eucalyptus (continued)
           Eucalyptus recurva (Mongarlowe mallee)                	NSW	O	C	G(1)
      ser. Sturgissianae
           Eucalyptus sturgissiana (Ettrema mallee)              	NSW	O	C	G(1)m
-     ser. Viminales (white gums)                                                                   E. ser. Acaciiformes, E. ser. Argyrophloiae, E. ser. Benthamianae, E. ser. Compactae,
-     <>                                                                                            E. ser. Confines, E. ser. Kitsonianae, E. ser. Microcarpae, E. ser. Orbiculares, E. ser. Saxicola
+     ser. Viminales (white gums)                                                                   E. ser. Acaciiformes, E. ser. Argyrophloiae, E. ser. Benthamianae, E. ser. Compactae, E. ser. Confines, E. ser. Kitsonianae, E. ser. Microcarpae, E. ser. Orbiculares, E. ser. Saxicola
        subser. Circulares
           Eucalyptus perriniana (spinning gum)
             subsp. perriniana                                   	Tas	O	C	G(1)
