@@ -744,8 +744,8 @@ Eucalyptus (continued)
           Eucalyptus conglobata
             subsp. conglobata (Port Lincoln mallee)                               	WA,SA	O	C	G(7)m
             subsp. perata                                                         	WA	O	C	G(2)m
-          Eucalyptus sp. Esperance (French 1579)                                   W             O   C   G(3)m      E. ‘burgmanniana’ ms
-          Eucalyptus valens (Esperance mallet)                                     W             O   C   G(1)m      E. sp. T in Brooker & Kleinig 1990
+          Eucalyptus sp. Esperance (French 1579)                                   W 	O	   C	  G(3)m	     E. ‘burgmanniana’ ms
+          Eucalyptus valens (Esperance mallet)                                     W 	O	   C	  G(1)m	     E. sp. T in Brooker & Kleinig 1990
           Eucalyptus fraseri
             subsp. fraseri (Balladonia gum)                                       	WA	O	C	G(3)m	E. conglobata subsp. fraseri Brooker
             subsp. melanobasis (Fraser Range blackbutt)                           	WA	O	C	G(2)m	E. fraseri subsp. ‘blackbutt’ in Brooker & Kleinig 1990

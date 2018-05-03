@@ -1,0 +1,20 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+coe = read_tsv("../ClassifcationOfEucs.tsv")
+coe.clean = coe %>% 
+  mutate_at(1:7, function(t) {
+    trimws(sub(" ?\\(.+\\)", "", t))
+  })
+```
+
+
