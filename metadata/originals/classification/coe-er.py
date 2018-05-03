@@ -3,7 +3,7 @@
 def cleanup(s):
     for rm in ["(continued)", "subg.", "sect.", "ser.", "subser."]:
         s = s.replace(rm, "")
-    return s.strip()
+    return '"' + s.strip() + '"'
 
 def main(dbfile):
     with open(dbfile) as fh:

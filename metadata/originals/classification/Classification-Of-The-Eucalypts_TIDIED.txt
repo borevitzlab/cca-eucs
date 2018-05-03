@@ -5,8 +5,7 @@ Angophora (apples)                                                              
             subsp. costata (smooth-barked apple, rusty gum)  	NSW,Qld	O	C	G(2)m	E. apocynifolia
           Angophora leiocarpa (smooth-barked apple)          	Qld,NSW	O	C	G(1)	A. costata subsp. leiocarpa, E. leiocarpa
      ser. Angophora (rough-barked apples)                                                      E. ser. Angophora
-       subser. ‘Floribundinae’ ms                                                              A. ser. Floribundinae, A. ser. Bakerinae, A. ser. Subvelutinae,
-                                                                                               E. ser. Floribundinae
+       subser. ‘Floribundinae’ ms                                                              A. ser. Floribundinae, A. ser. Bakerinae, A. ser. Subvelutinae, E. ser. Floribundinae
           Angophora bakeri (small-leaved apple)              	NSW	O	C	–	E. angustata
           Angophora paludosa                                 	NSW	O	C	–	E. palustris, A. bakeri subsp. paludosa
           Angophora woodsiana (smudgy apple)                 	Qld,NSW	O	C	–	E. woodsiana
