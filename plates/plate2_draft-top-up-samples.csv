@@ -1,0 +1,18 @@
+plate,Taxon,Sample,SameLeaf?
+CC02,Eucalyptus quadrangulata,R055/T01,
+CC02,Eucalyptus rossii,R057/T10,
+CC02,Eucalyptus rossii,R057/T10,Y
+CC02,Eucalyptus camaldulensis subsp. camaldulensis,R071/T28,
+CC02,Eucalyptus camaldulensis subsp. camaldulensis,R071/T29,
+CC02,Corymbia calophylla,R072/T27,
+CC02,Eucalyptus viminalis subsp. cygnetensis,R075/T26,
+CC02,Eucalyptus coolabah,R086/T17,
+CC02,Eucalyptus coolabah,R086/T18,
+CC02,Eucalyptus tetrapleura,R093/T33,
+CC02,Eucalyptus tetrapleura,R093/T34,
+CC02,Eucalyptus croajingolensis,R142/T16,
+CC02,Eucalyptus ophitica,R151/T30,
+CC02,Eucalyptus ophitica,R151/T30,Y
+extra?,Eucalyptus ophitica,R151/T31,
+extra?,Eucalyptus coolabah,R202/T24,
+extra?,Eucalyptus camaldulensis subsp. arida,R203/T01,
