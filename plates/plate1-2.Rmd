@@ -1,0 +1,35 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+```{r setup, include=F}
+library(tidyverse)
+```
+
+```{r}
+p12.plan = read_csv("plate1-2_draft-samples.csv") %>% 
+  filter(!is.na(Sample))
+p12.actual = read_csv("current-sampling.csv") %>% 
+  mutate(accession_id = gsub("-rep\\d+$", "", sample_id))
+meta = read_csv("../metadata/originals/CCATreesCleaned.csv")
+```
+
+```{r}
+md.basic = meta %>%
+  select(CurrentName, Voucher, FieldID, RowTree) %>% 
+  filter(!is.na(RowTree))
+
+
+p12 = p12.actual %>%
+  left_join(md.basic, by=c("accession_id"="FieldID")) %>% 
+  full_join(p12.plan, by=c("RowTree"="Sample"))
+
+#p12.plan %>%
+#  left_join(md.basic, by=c("Sample"="RowTree")) %>% 
+#  right_join(p12.actual, by=c("FieldID"="sample_id"))
+  
+
+```
+
