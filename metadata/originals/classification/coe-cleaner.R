@@ -55,4 +55,4 @@ cleaned$CleanedBinomial = sciclean$Binomial
 
 # Write out
 write_csv(cleaned, "FullCleanedTaxonomy.csv")
-write_csv(cleaned, "../DNTaxonomyCleaned.csv")
+write_csv(sciclean, "../DNTaxonomyCleaned.csv")
