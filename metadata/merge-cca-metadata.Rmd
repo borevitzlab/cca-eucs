@@ -1,0 +1,106 @@
+---
+title: "CCA metadata merge"
+output:
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: console
+---
+```{r setup, include=F}
+library(tidyverse)
+options("stringsAsFactors" = FALSE)
+```
+
+This notebook takes the cleaned metadata from Dean, and our additions, and creates a master table which contains merged, tree-level metadata from CCA planting, maternal voucher collection, and Dean's taxonomy.
+
+## Load and merge metadata
+
+```{r}
+coe = read.csv("originals/DNTaxonomyCleaned.csv")
+cca = read.csv("originals/CCATreesCleaned.csv")
+dnvouch = read.csv("originals/DNVoucherRecordsCleaned.csv")
+```
+
+```{r}
+cca_meta = cca %>%
+  left_join(dnvouch, by="DNNumber") %>%
+  mutate(CurrentName = trimws(CurrentName)) %>% 
+  filter(!is.na(CurrentName)) %>%
+  left_join(coe, by=c("CurrentName"="Binomial")) %>%
+  select(FieldID, RowTree, CurrentName, everything())
+```
+
+How many CCA trees can't be matched to Dean's voucher data?
+
+```{r}
+table(!cca$DNNumber %in% dnvouch$DNNumber)
+```
+
+And how many trees have names which don't match the current taxonomy?
+
+```{r}
+table(!cca$CurrentName %in% coe$Binomial)
+```
+
+
+The union of these is:
+
+```{r}
+table(!cca$CurrentName %in% coe$Binomial | !cca$DNNumber %in% dnvouch$DNNumber)
+```
+
+## Write out current merged metadata
+```{r}
+write_csv(cca_meta, "CCATreesCombinedMetadata.csv")
+```
+
+
+# Investigate non-matching scientific names
+
+```{r}
+fullcoe = read.csv("originals/classification/FullCleanedTaxonomy.csv")
+```
+
+```{r}
+nomatch = cca_meta %>% 
+  filter(! CurrentName %in% fullcoe$CleanedBinomial) %>% 
+  rowwise() %>%
+  mutate(
+    match.binom=paste(fullcoe$CleanedBinomial[
+      agrep(CurrentName, fullcoe$CleanedBinomial, fixed=T)
+      ], collapse="|"),
+    match.synonym=paste(fullcoe$Synonyms[
+      agrep(sub("^Eucalyptus |^Angophora |^Corymbia", "", CurrentName),
+            fullcoe$Synonyms, fixed=T)
+      ], collapse="|")
+    ) %>%
+  select(CurrentName, match.binom, match.synonym) %>%
+  unique()
+```
+
+```{r}
+nomatch2 = cca_meta %>% 
+  filter(! CurrentName %in% fullcoe$CleanedBinomial) %>% 
+  select(CurrentName, FieldID) %>%
+  nest(FieldID) %>%
+  mutate(
+     spp.abbrev = sub("^(E)ucalyptus |^(A)ngophora |^(C)orymbia",
+                      "\\1\\2\\3. ", CurrentName),
+     spp.trim = sub("^(E)ucalyptus |^(A)ngophora |^(C)orymbia",
+                    "", CurrentName),
+     match.binom = map(CurrentName, function(cn) {
+       m = agrep(cn, fullcoe$CleanedBinomial, fixed=T)
+       if(length(m) == 0) {
+         return(NULL)
+       }
+       return(fullcoe[m,c("CleanedBinomial", "Synonyms")])
+     }),
+     match.synonym = map(spp.abbrev, function(cn) {
+       m = agrep(cn, fullcoe$Synonyms, fixed=T)
+       if(length(m) == 0) {
+         return(NULL)
+       }
+       return(fullcoe[m,c("CleanedBinomial", "Synonyms")])
+     })
+  )
+```
