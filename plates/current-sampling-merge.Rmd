@@ -1,0 +1,37 @@
+---
+title: "Current Plate Layout Metadata merge"
+author: "Kevin Murray"
+date: "30 May 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+options("stringsAsFactors"=F)
+```
+
+```{r}
+samps = read.csv("current-sampling.csv")
+meta = read.csv("../metadata/CCATreesCombinedMetadata.csv")
+```
+```{r eval=F,include=F}
+str(samps)
+str(meta)
+```
+
+```{r}
+samps.meta = samps %>%
+  filter(sample_id != "blank") %>%
+  mutate(accession_id = sub("(\\S+)-\\S+", "\\1", sample_id)) %>%
+  left_join(meta, by=c("accession_id"="FieldID")) %>%
+  select(sample_id, accession_id, CurrentName, everything())
+```
+```{r eval=F,include=F}
+str(samps.meta)
+View(samps.meta)
+```
+
+```{r}
+write_tsv(samps.meta, "CurrentSamplingWithMetadata.tsv", na = "")
+```
